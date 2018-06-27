@@ -1,18 +1,13 @@
-# star_selection
-select star
+# End to end satellite selection with deep learning
 
-## NEXT:
-- [x] Make star id consistant in input data
-- [x] Integrate loss of positive number constrain
-- [x] Add positive num as input
-- [x] Output error cases
-- [ ] Check valid padding
-- [ ] Analyze the efficiency of num_pos in multiple num_pos case
-- [ ] Cut star num to use larger conv size
-- [ ] Try to use num_pos more efficiently at the very early stage
-- [x] Instead of classify to two classes, try to classify to one class. Selecct the num_pos maximum of probability to this class.
-- [x] Shuffle input order
-- [ ] Think of drop out
-- [ ] Integrate loss of time consistant
-- [x] Use weighted loss, the loss for missing stars are smaller
-- [ ] Figure out some way to sort all the satelites
+(1) The codes are tested under Ubuntu16.04 & Ubuntu17.10, python2, and Tensorflow1.6 & TF1.8 (GPU).
+(2) Download data from: (326M)
+  https://unsw-my.sharepoint.com/:u:/g/personal/z5105843_ad_unsw_edu_au/EauUY9zffq1LpEW1OtTzxyUBed34PAB4XqoIBWHBWMACnA?e=13eGQY
+Unzip to root directory ("satellite_selection"). Then four data folders will under "satellite_selection/": 
+	1. data_WGDOP_new(366M)
+	2. data_WGDOP_new2(311M) 
+	3. data_WGDOP_test2(63M) 
+	4. data_WGDOP_test_new2(31M)
+(3) train with script: run_train.sh
+    evaluate with script: run_evaluate.sh
+    The results will be saved in RES/ and log name is automatically set by training parameters.
