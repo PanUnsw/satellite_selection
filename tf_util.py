@@ -165,7 +165,10 @@ def conv2d(inputs,
                                         bn_decay=bn_decay, scope='bn')
 
       if activation_fn is not None:
-        outputs = activation_fn(outputs)
+        if activation_fn == tf.nn.leaky_relu:
+            outputs = activation_fn(outputs,0.18)
+        else:
+            outputs = activation_fn(outputs)
       return outputs
 
 
