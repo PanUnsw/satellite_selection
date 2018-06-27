@@ -1,110 +1,156 @@
 #!/bin/bash
 
-train_script=train.py
-MaxEpoch=5
-
-DataSource=data_withg
+train_script=train_cascade.py
 
 
-# Loss config  ***************************
-LOSS0="python $train_script --a LOSS1  --empty_loss_w 0.05 --neg_loss_w 0.1  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss0"
-LOSS1="python $train_script --a LOSS1  --empty_loss_w 0.05 --neg_loss_w 0.1  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss1"
-LOSS2="python $train_script --a LOSS2  --empty_loss_w 0.05 --neg_loss_w 0.3  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss2"
-LOSS3="python $train_script --a LOSS3  --empty_loss_w 0.05 --neg_loss_w 0.5  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss3"
-LOSS4="python $train_script --a LOSS4  --empty_loss_w 0.05 --neg_loss_w 0.7  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss4"
-LOSS5="python $train_script --a LOSS5  --empty_loss_w 0.05 --neg_loss_w 0.9  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss5"
-LOSS6="python $train_script --a LOSS6  --empty_loss_w 0.05 --neg_loss_w 0.9  --model_config 3 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch --log_dir log_loss6"
-#./parallel_commands  "$LOSS0" "$LOSS1" "$LOSS2" "$LOSS3" "$LOSS4" "$LOSS5"
-
-# Model config  ***************************
-Mc0_AllEle_B32_N11="python $train_script --a Mc0_AllEle_B32_N11  --model_config 0 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc1_AllEle_B32_N11="python $train_script --a Mc1_AllEle_B32_N11  --model_config 1 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc2_AllEle_B32_N11="python $train_script --a Mc2_AllEle_B32_N11  --model_config 2 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc3_AllEle_B32_N11="python $train_script --a Mc3_AllEle_B32_N11  --model_config 3 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc4_AllEle_B32_N11="python $train_script --a Mc4_AllEle_B32_N11  --model_config 4 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc5_AllEle_B32_N11="python $train_script --a Mc5_AllEle_B32_N11  --model_config 5 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc6_AllEle_B32_N11="python $train_script --a Mc6_AllEle_B32_N11  --model_config 6 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc7_AllEle_B32_N11="python $train_script --a Mc7_AllEle_B32_N11  --model_config 7 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc8_AllEle_B32_N11="python $train_script --a Mc8_AllEle_B32_N11  --model_config 8 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc9_AllEle_B32_N11="python $train_script --a Mc9_AllEle_B32_N11  --model_config 9 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-
-#./parallel_commands "$Mc0_AllEle_B32_N11"  "$Mc1_AllEle_B32_N11" "$Mc2_AllEle_B32_N11"  "$Mc3_AllEle_B32_N11" "$Mc4_AllEle_B32_N11" "$Mc5_AllEle_B32_N11"
-#./parallel_commands "$Mc6_AllEle_B32_N11" "$Mc7_AllEle_B32_N11" "$Mc8_AllEle_B32_N11" "$Mc9_AllEle_B32_N11"
-#./parallel_commands  "$Mc8_AllEle_B32_N11" "$Mc9_AllEle_B32_N11"
-#$Mc0_AllEle_B32_N11
+N9_WGDOP="python $train_script --a N9_WGDOP --data_source data_WGDOP --num_pos_ls 9 --feed_star_elements xyzhd"
 
 
 
-Mc100_AllEle_B32_N11="python $train_script --a Mc100_AllEle_B32_N11  --model_config 100 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc101_AllEle_B32_N11="python $train_script --a Mc101_AllEle_B32_N11  --model_config 101 --data_source $DataSource"
-Mc102_AllEle_B32_N11="python $train_script --a Mc102_AllEle_B32_N11  --model_config 102 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc103_AllEle_B32_N11="python $train_script --a Mc103_AllEle_B32_N11  --model_config 103 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-Mc104_AllEle_B32_N11="python $train_script --a Mc104_AllEle_B32_N11  --model_config 104 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-
-#./parallel_commands "$Mc100_AllEle_B32_N11" "$Mc101_AllEle_B32_N11" "$Mc102_AllEle_B32_N11" "$Mc103_AllEle_B32_N11"
-$Mc101_AllEle_B32_N11
-
-# Eles  ***************************
-AllEle_B32_N11="python $train_script --a AllEle_B32_N11 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-XyzHd_B32_N11="python $train_script --a XyzHd_B32_N11 --feed_star_elements xyzhd --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Xyz_B32_N11="python $train_script --a Xyz_B32_N11 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Xyzg_B32_N11="python $train_script --a Xyzg_B32_N11 --feed_star_elements xyzg --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Xyzn_B32_N11="python $train_script --a Xyzn_B32_N11 --feed_star_elements xyzn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Xyzgn_B32_N11="python $train_script --a Xyzgn_B32_N11 --feed_star_elements xyzgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Hd_B32_N11="python $train_script --a Hd_B32_N11 --feed_star_elements hd --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Hdg_B32_N11="python $train_script --a Hdg_B32_N11 --feed_star_elements hdg --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Hdn_B32_N11="python $train_script --a Hdn_B32_N11 --feed_star_elements hdn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-Hdgn_B32_N11="python $train_script --a Hdgn_B32_N11 --feed_star_elements hdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-
-#./parallel_commands "$AllEle_B32_N11" "$XyzHd_B32_N11" "$Xyz_B32_N11" "$Xyzg_B32_N11" "$Xyzn_B32_N11" "$Xyzgn_B32_N11" "$Hd_B32_N11" "$Hdg_B32_N11" "$Hdn_B32_N11" "$Hdgn_B32_N11"
+N9_WGDOP_B128_0_Mcon_0_1611="python $train_script --ntop_candi 16-11  --cascade_step 0  --neg_loss_w 1.15-2.1-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP --data_source_test data_WGDOP_test --model_config 9-5-8  --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 11 --UseMultiConcat --activation_fn relu"
+N9_WGDOP_B128_0_Mcon_1_1611="python $train_script --ntop_candi 16-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 10 --a N9_WGDOP_B128 --data_source data_WGDOP --data_source_test data_WGDOP_test --model_config 9-5-8  --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 97 --UseMultiConcat --activation_fn relu"
+N9_WGDOP_B128_0_Mcon_1_1611_FT="python $train_script --ntop_candi 16-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 10-34 --a N9_WGDOP_B128 --data_source data_WGDOP --model_config 9-5-8 --data_source_test data_WGDOP_test --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 197 --UseMultiConcat --finetune --log_dir logN9_WGDOP_B128_xyzhd_b128_9_data_WGDOP_ntop16-11_mc9-5-8MtiCon"
 
 
-# num_loss  ***************************
-AllEle_B32_N11_nl0="python $train_script --a AllEle_B32_N11_nl0 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.0 --max_epoch $MaxEpoch"
-AllEle_B32_N11_nl0d01="python $train_script --a AllEle_B32_N11_nl0d01 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch $MaxEpoch"
-AllEle_B32_N11_nl0d05="python $train_script --a AllEle_B32_N11_nl0d05 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.05 --max_epoch $MaxEpoch"
-AllEle_B32_N11_nl0d1="python $train_script --a AllEle_B32_N11_nl0d1 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.1 --max_epoch $MaxEpoch"
-AllEle_B32_N11_nl0d3="python $train_script --a AllEle_B32_N11_nl0d3 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.3 --max_epoch $MaxEpoch"
-AllEle_B32_N11_nl0d8="python $train_script --a AllEle_B32_N11_nl0d8 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.8 --max_epoch $MaxEpoch"
+#$N9_WGDOP_B128_0_Mcon_1_1611_FT
 
-#./parallel_commands "$AllEle_B32_N11_nl0" "$AllEle_B32_N11_nl0d01" "$AllEle_B32_N11_nl0d05" "$AllEle_B32_N11_nl0d1" "$AllEle_B32_N11_nl0d3" "$AllEle_B32_N11_nl0d8"
 
-# AllEle  ***********************
-AllEle_B32_AllNum="python $train_script --a AllEle_B32_AllNum --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-AllEle_B32_N11="python $train_script --a AllEle_B32_N11 --feed_star_elements xyzhdgn --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
+#$N9_WGDOP_B128_0_Mcon_0_1611
+#$N9_WGDOP_B128_0_Mcon_1_1611
 
-AllEle_B128_AllNum="python $train_script --a AllEle_B128_AllNum --feed_star_elements xyzhdgn --batch_size 128 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-AllEle_B128_N11="python $train_script --a AllEle_B128_N11 --feed_star_elements xyzhdgn --batch_size 128 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
 
-AllEle_B256_AllNum="python $train_script --a AllEle_B256_AllNum --feed_star_elements xyzhdgn --batch_size 256 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-AllEle_B256_N11="python $train_script --a AllEle_B256_N11 --feed_star_elements xyzhdgn --batch_size 256 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
+#----------------------------------------------------------------------------------------------------
+N9_WGDOP_B128_0_Mcon_0_1611_12="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.1-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_9 --model_config 9-53-18 --data_source_test data_WGDOP_test9 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 1 --UseMultiConcat"
+N9_WGDOP_B128_0_Mcon_1_1611_12="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_9 --model_config 9-53-18 --data_source_test data_WGDOP_test9 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 77 --UseMultiConcat"
 
-#$AllEle_B32_AllNum
 
-# Xyz  ***********************
-Xyz_B32_AllNum="python $train_script --a Xyz_B32_AllNum --feed_star_elements xyz --batch_size 32 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-Xyz_B32_N11="python $train_script --a Xyz_B32_N11 --feed_star_elements xyz --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-
-Xyz_B128_AllNum="python $train_script --a Xyz_B128_AllNum --feed_star_elements xyz --batch_size 128 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-Xyz_B128_N11="python $train_script --a Xyz_B128_N11 --feed_star_elements xyz --batch_size 128 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-
-Xyz_B256_AllNum="python $train_script --a Xyz_B256_AllNum --feed_star_elements xyz --batch_size 256 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-Xyz_B256_N11="python $train_script --a Xyz_B256_N11 --feed_star_elements xyz --batch_size 256 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
+$N9_WGDOP_B128_0_Mcon_0_1611_12
+$N9_WGDOP_B128_0_Mcon_1_1611_12
+###test for 12
 
 
 
-# Hd  ***********************
-Hd_B32_AllNum="python $train_script --a Hd_B32_AllNum --feed_star_elements hd --batch_size 32 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-Hd_B32_N11="python $train_script --a Hd_B32_N11 --feed_star_elements hd --batch_size 32 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
+#----------------------------------------------------------------------------------------------------
+N9_WGDOP_B128_0_Mcon_0_1611_12="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.1-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_9 --model_config 9-53-18 --data_source_test data_WGDOP_test9 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 1 --UseMultiConcat"
+N9_WGDOP_B128_0_Mcon_1_1611_12="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_9 --model_config 9-53-18 --data_source_test data_WGDOP_test9 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 77 --UseMultiConcat"
 
-Hd_B128_AllNum="python $train_script --a Hd_B128_AllNum --feed_star_elements hd --batch_size 128 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-Hd_B128_N11="python $train_script --a Hd_B128_N11 --feed_star_elements hd --batch_size 128 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
 
-Hd_B256_AllNum="python $train_script --a Hd_B256_AllNum --feed_star_elements hd --batch_size 256 --num_pos_ls 7-9-11-13 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
-Hd_B256_N11="python $train_script --a Hd_B256_N11 --feed_star_elements hd --batch_size 256 --num_pos_ls 11 --loss_w_class 1.0 --loss_w_numpos 0.01 --max_epoch 2"
+#$N9_WGDOP_B128_0_Mcon_0_1611_12
+#$N9_WGDOP_B128_0_Mcon_1_1611_12
+###test for 9
 
-#./parallel_commands "$AllEle_B32_AllNum" "$AllEle_B32_N11" "$AllEle_B128_AllNum" "$AllEle_B128_N11" "$AllEle_B256_AllNum" "$AllEle_B256_N11"
-#./parallel_commands "$Xyz_B32_AllNum" "$Xyz_B32_N11" "$Xyz_B128_AllNum" "$Xyz_B128_N11" "$Xyz_B256_AllNum" "$Xyz_B256_N11"
-#./parallel_commands "$Hd_B32_AllNum" "$Hd_B32_N11" "$Hd_B128_AllNum" "$Hd_B128_N11" "$Hd_B256_AllNum" "$Hd_B256_N11"
 
-#;$AllEle_B32_N11
+
+#----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+#---------------- hd
+N9_WGDOP_B128_0_Mcon_0_1611_12_hd="python $train_script --ntop_candi 20-13  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new2 --model_config 9-50-18 --data_source_test data_WGDOP_test_new2 --num_pos_ls 12 --batch_size 128 --feed_star_elements hd --max_epoch 1 --UseMultiConcat --gpu 1"
+N9_WGDOP_B128_0_Mcon_1_1611_12_hd="python $train_script --ntop_candi 20-13  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new2 --model_config 9-50-18 --data_source_test data_WGDOP_test_new2 --num_pos_ls 12 --batch_size 128 --feed_star_elements hd --max_epoch 101 --UseMultiConcat --gpu 1"
+
+
+#$N9_WGDOP_B128_0_Mcon_0_1611_12_hd
+#$N9_WGDOP_B128_0_Mcon_1_1611_12_hd
+###use for 12 sats
+
+
+#----------- xyz
+N9_WGDOP_B128_0_Mcon_0_1611_12_xyz="python $train_script --ntop_candi 20-13  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new2 --model_config 9-50-18 --data_source_test data_WGDOP_test_new2 --num_pos_ls 12 --batch_size 128 --feed_star_elements xyz --max_epoch 1 --UseMultiConcat"
+N9_WGDOP_B128_0_Mcon_1_1611_12_xyz="python $train_script --ntop_candi 20-13  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new2 --model_config 9-50-18 --data_source_test data_WGDOP_test_new2 --num_pos_ls 12 --batch_size 128 --feed_star_elements xyz --max_epoch 101 --UseMultiConcat"
+
+
+#$N9_WGDOP_B128_0_Mcon_0_1611_12_xyz
+#$N9_WGDOP_B128_0_Mcon_1_1611_12_xyz
+###use for 12 sats
+
+#----------- xyzhd
+N9_WGDOP_B128_0_Mcon_0_1611_12="python $train_script --ntop_candi 20-13  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new2 --model_config 9-50-18 --data_source_test data_WGDOP_test_new2 --num_pos_ls 12 --batch_size 128 --feed_star_elements xyzhd --max_epoch 1 --UseMultiConcat --gpu 1"
+N9_WGDOP_B128_0_Mcon_1_1611_12="python $train_script --ntop_candi 20-13  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new2 --model_config 9-50-18 --data_source_test data_WGDOP_test_new2 --num_pos_ls 12 --batch_size 128 --feed_star_elements xyzhd --max_epoch 101 --UseMultiConcat --gpu 1"
+
+
+#$N9_WGDOP_B128_0_Mcon_0_1611_12
+#$N9_WGDOP_B128_0_Mcon_1_1611_12
+
+###use for 12 sats
+
+
+#----------------------------------------------------------------------------------------------------
+#  only xyz
+N9_WGDOP_B128_0_Mcon_0_1611_9_XYZ="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyz --max_epoch 1 --UseMultiConcat"
+N9_WGDOP_B128_0_Mcon_1_1611_9_XYZ="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyz --max_epoch 101 --UseMultiConcat"
+
+#$N9_WGDOP_B128_0_Mcon_0_1611_9_XYZ
+#$N9_WGDOP_B128_0_Mcon_1_1611_9_XYZ
+##use for 9
+
+# --------
+#  only hd
+N9_WGDOP_B128_0_Mcon_0_1611_9_HD="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --max_epoch 1 --UseMultiConcat --gpu 1"
+N9_WGDOP_B128_0_Mcon_1_1611_9_HD="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --max_epoch 101 --UseMultiConcat --gpu 1"
+
+#$N9_WGDOP_B128_0_Mcon_0_1611_9_HD
+#$N9_WGDOP_B128_0_Mcon_1_1611_9_HD
+##use for 9
+
+
+
+# -------xyzhd
+N9_WGDOP_B128_0_Mcon_0_1611_9="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 1 --UseMultiConcat"
+N9_WGDOP_B128_0_Mcon_1_1611_9="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 101 --UseMultiConcat"
+
+#$N9_WGDOP_B128_0_Mcon_0_1611_9
+#$N9_WGDOP_B128_0_Mcon_1_1611_9
+##use for 9
+
+
+
+N9_WGDOP_B128_0_Mcon_1_1611_9_HD_FT="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-46 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --finetune --max_epoch 67 --UseMultiConcat"
+#$N9_WGDOP_B128_0_Mcon_1_1611_9_HD_FT
+
+
+
+N9_WGDOP_B128_0_Mcon_1_1611_9_XYZ_FT="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-46 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-52-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --batch_size 128 --feed_star_elements xyz --finetune  --max_epoch 67 --UseMultiConcat"
+#$N9_WGDOP_B128_0_Mcon_1_1611_9_XYZ_FT
+
+
+
+N9_WGDOP_B128_0_Mcon_1_1710_FT="python $train_script --ntop_candi 17-10  --cascade_step 1  --neg_loss_w 0.75-1.1-1.25 --model_epoch 10-46 --a N9_WGDOP_B128 --data_source data_WGDOP --model_config 5-3-5  --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --max_epoch 97 --UseMultiConcat --finetune --log_dir logN9_WGDOP_B128_xyzhd_b128_9_data_WGDOP_ntop17-10_mc5-3-5MtiCon"
+
+#$N9_WGDOP_B128_0_Mcon_1_1710_FT
+
+
+
+
+
+
+
+
+N9_WGDOP_B128_FT="python $train_script --a N9_WGDOP_B128 --data_source data_WGDOP --num_pos_ls 9  --batch_size 128 --feed_star_elements xyzhd --finetune --model_epoch 38 --max_epoch 67"
+
+
+N9_WGDOP_B256="python $train_script --a N9_WGDOP_B256 --data_source data_WGDOP --num_pos_ls 9 --batch_size 256 --feed_star_elements xyzhd --max_epoch 48"
+N9_WGDOP_B256_FT="python $train_script --a N9_WGDOP_B256 --data_source data_WGDOP --num_pos_ls 9 --batch_size 256 --feed_star_elements xyzhd --finetune --model_epoch 36 --max_epoch 53"
+
+N9_WGDOP_B512="python $train_script --a N9_WGDOP_B512 --data_source data_WGDOP --num_pos_ls 9 --batch_size 512 --feed_star_elements xyzhd --max_epoch 48"
+N9_WGDOP_B512_FT="python $train_script --a N9_WGDOP_B512 --data_source data_WGDOP --num_pos_ls 9 --batch_size 512 --feed_star_elements xyzhd --finetune --model_epoch 36 --max_epoch 53"
+
+#$N9_WGDOP_B128_FT
+
+
+#$N9_WGDOP_B256_FT
+#$N9_WGDOP_B256
+#./parallel_commands "$N9_WGDOP_B48" "$N9_WGDOP_B64" "$N9_WGDOP_B128" "$N9_WGDOP_B256"
+
+N9_WGDOP_B128_Reg="python $train_script --a N9_WGDOP_B128_Reg --data_source data_WGDOP --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhdi --max_epoch 40 --IsRegression"
+#$N9_WGDOP_B128_Reg
+
+
+N9_WGDOP_B256_hingloss_m98="python $train_script  --data_source data_WGDOP --num_pos_ls 9 --batch_size 256 --feed_star_elements xyzhd --max_epoch 100 --IsHingeloss --model_config 98"
+N9_WGDOP_B256_hingloss_m99="python $train_script  --data_source data_WGDOP --num_pos_ls 9 --batch_size 256 --feed_star_elements xyzhd --max_epoch 100 --IsHingeloss --model_config 99"
+N9_WGDOP_B256_hingloss_m100="python $train_script  --data_source data_WGDOP --num_pos_ls 9 --batch_size 256 --feed_star_elements xyzhd --max_epoch 100 --IsHingeloss --model_config 100"
+N9_WGDOP_B256_hingloss_m101="python $train_script  --data_source data_WGDOP --num_pos_ls 9 --batch_size 256 --feed_star_elements xyzhd --max_epoch 100  --model_config 101"
+#$N9_WGDOP_B256_hingloss_m101

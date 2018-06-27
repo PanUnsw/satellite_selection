@@ -2,3 +2,6 @@
 *.swp
 .ropeproject
 log*
+data_*
+RES
+DATA_*

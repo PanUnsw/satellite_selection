@@ -112,7 +112,7 @@ class Star_Reader():
             else:
                 return False
     def save_shufled(self):
-        if not os.path.exists(self.DEFAULT_ZIP_DATA_PATH +'.npz'):
+        if not os.path.exists(self.DEFAULT_ZIP_DATA_SHUFFLED_PATH +'.npz'):
             N = self.datas.shape[0]
             shuffled_idx = np.arange(N)
             np.random.shuffle(shuffled_idx)
