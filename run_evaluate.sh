@@ -60,7 +60,7 @@ N12_WGDOP_B128_0_Mcon_0_1611="python $train_script --only_evaluate --log_dir log
 N12_WGDOP_B128_0_Mcon_1_1611="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_xyzhd_b128_12_data_WGDOP_new2_ntop20-13_mc9-50-18MtiCon --ntop_candi 20-13 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-48 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test_new2 --model_config 9-50-18  --num_pos_ls 12 --batch_size 128 --feed_star_elements xyzhd --UseMultiConcat --fix_pn"
 
 #$N12_WGDOP_B128_0_Mcon_0_1611
-$N12_WGDOP_B128_0_Mcon_1_1611
+#$N12_WGDOP_B128_0_Mcon_1_1611
 
 
 ##use for 12 sats
@@ -72,7 +72,7 @@ N12_WGDOP_B128_0_Mcon_0_1611_xyz="python $train_script --only_evaluate --log_dir
 N12_WGDOP_B128_0_Mcon_1_1611_xyz="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_xyz_b128_12_data_WGDOP_new2_ntop20-13_mc9-50-18MtiCon --ntop_candi 20-13 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-48 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test_new2 --model_config 9-50-18  --num_pos_ls 12 --batch_size 128 --feed_star_elements xyz --UseMultiConcat --fix_pn"
 
 #$N12_WGDOP_B128_0_Mcon_0_1611_xyz
-$N12_WGDOP_B128_0_Mcon_1_1611_xyz
+#$N12_WGDOP_B128_0_Mcon_1_1611_xyz
 
 ##use for 12 sats
 
@@ -82,7 +82,7 @@ N12_WGDOP_B128_0_Mcon_0_1611_HD="python $train_script --only_evaluate --log_dir 
 N12_WGDOP_B128_0_Mcon_1_1611_HD="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_hd_b128_12_data_WGDOP_new2_ntop20-13_mc9-50-18MtiCon --ntop_candi 20-13 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-48 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test_new2 --model_config 9-50-18  --num_pos_ls 12 --batch_size 128 --feed_star_elements hd --UseMultiConcat --fix_pn"
 
 #$N12_WGDOP_B128_0_Mcon_0_1611_HD
-$N12_WGDOP_B128_0_Mcon_1_1611_HD
+#$N12_WGDOP_B128_0_Mcon_1_1611_HD
 
 ##use for 12 sats
 
@@ -95,6 +95,8 @@ $N12_WGDOP_B128_0_Mcon_1_1611_HD
 
 
 #-------------------------------------------------------------------------
+# xyzhd
+
 N9_WGDOP_B128_0_Mcon_0_1611="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_xyzhd_b128_9_data_WGDOP_new_ntop20-11_mc9-52-18MtiCon --ntop_candi 20-11 --cascade_step 0  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0    --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-52-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --UseMultiConcat"
 N9_WGDOP_B128_0_Mcon_1_1611="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_xyzhd_b128_9_data_WGDOP_new_ntop20-11_mc9-52-18MtiCon --ntop_candi 20-11 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-8 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-52-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements xyzhd --UseMultiConcat --fix_pn"
 
@@ -117,10 +119,10 @@ N9_WGDOP_B128_0_Mcon_1_1611_XYZ="python $train_script --only_evaluate --log_dir 
 #-----------
 # only use hd
 N9_WGDOP_B128_0_Mcon_0_1611_HD="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_hd_b128_9_data_WGDOP_new_ntop20-11_mc9-52-18MtiCon --ntop_candi 20-11 --cascade_step 0  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0    --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-52-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --UseMultiConcat"
-N9_WGDOP_B128_0_Mcon_1_1611_HD="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_hd_b128_9_data_WGDOP_new_ntop20-11_mc9-52-18MtiCon --ntop_candi 20-11 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-8 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-52-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --UseMultiConcat --fix_pn"
+N9_WGDOP_B128_0_Mcon_1_1611_HD="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_hd_b128_9_data_WGDOP_new_ntop20-11_mc9-52-18MtiCon --ntop_candi 20-11 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-100 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-52-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --UseMultiConcat --fix_pn"
 
 
 #$N9_WGDOP_B128_0_Mcon_0_1611_HD
-#$N9_WGDOP_B128_0_Mcon_1_1611_HD
+$N9_WGDOP_B128_0_Mcon_1_1611_HD
 ##use for 9 sats
 
