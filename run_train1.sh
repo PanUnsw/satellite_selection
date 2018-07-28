@@ -55,10 +55,10 @@ N9_WGDOP_B128_0_Mcon_1_1611_9_HD="python $train_script --ntop_candi 20-11  --cas
 
 # --------
 #  only hd with model to PointNet
-N9_WGDOP_B128_0_Mcon_0_1611_9_HD="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-5222-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --decay_rate 0.35  --bn_decay_rate 0.35 --batch_size 128 --feed_star_elements hd --max_epoch 1 --UseMultiConcat --gpu 0"
-N9_WGDOP_B128_0_Mcon_1_1611_9_HD="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-5222-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --decay_rate 0.35 --bn_decay_rate 0.35 --batch_size 128 --feed_star_elements hd --max_epoch 60 --UseMultiConcat --gpu 0"
+N9_WGDOP_B128_0_Mcon_0_1611_9_HD="python $train_script --ntop_candi 20-11  --cascade_step 0  --neg_loss_w 1.15-1.2-1.25 --model_epoch 32 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-5222-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --decay_rate 0.2  --bn_decay_rate 0.2 --batch_size 128 --feed_star_elements hd --max_epoch 1 --UseMultiConcat --gpu 0"
+N9_WGDOP_B128_0_Mcon_1_1611_9_HD="python $train_script --ntop_candi 20-11  --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0 --a N9_WGDOP_B128 --data_source data_WGDOP_new --model_config 9-5222-18 --data_source_test data_WGDOP_test2 --num_pos_ls 9 --decay_rate 0.1 --bn_decay_rate 0.1 --batch_size 128 --feed_star_elements hd --max_epoch 60 --UseMultiConcat --gpu 0"
 
-$N9_WGDOP_B128_0_Mcon_0_1611_9_HD
+#$N9_WGDOP_B128_0_Mcon_0_1611_9_HD
 $N9_WGDOP_B128_0_Mcon_1_1611_9_HD
 ##use for 9
 

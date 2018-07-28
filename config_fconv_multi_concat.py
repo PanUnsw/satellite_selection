@@ -361,28 +361,31 @@ def get_config_fconv_multi_concat(flag,num_elements,num_class,num_satelite,k_con
             config_group_convs[i] = []
 
         #               kernel_size0,kernel_size1,num_out_channel,stride0,valid_or_same
-        config_classification = [[1, 1, 1024, 1, 0],
+        config_classification = [
                                  [1, 1, 512, 1, 0],
                                  [1, 1, num_class, 1, 0]]
 
     if flag == 5222:
 
-        config_point_encoders[0] = [[1, num_elements, 32, 1, 0],
-                                    [1, 1, 64, 1, 0],
-                                    [1, 1, 128, 1, 0],
-                                    [1, 1, 256, 1, 0],
-                                    [1, 1, 512, 1, 0],
-                                    [1, 1, 864, 1, 0],
-                                    [1, 1, 1024, 1, 0],
+        config_point_encoders[0] = [[1, num_elements, 32, 1, 0],[1, 1, 32, 1, 0], [1, 1, 48, 1, 0],
+                                    [1, 1, 64, 1, 0],[1, 1, 64, 1, 0], [1, 1, 96, 1, 0],
+                                    [1, 1, 128, 1, 0],[1, 1, 128, 1, 0],
+                                    [1, 1, 160, 1, 0],
+                                    [1, 1, 256, 1, 0],[1, 1, 256, 1, 0],
+                                    [1, 1, 320, 1, 0],
+                                    [1, 1, 512, 1, 0],[1, 1, 512, 1, 0],
+                                    [1, 1, 640, 1, 0],[1, 1, 864, 1, 0],[1, 1, 864, 1, 0],
+                                    [1, 1, 960, 1, 0],
+                                    [1, 1, 1024, 1, 0],[1, 1, 1024, 1, 0],
+                                     [1, 1, 1152, 1, 0]
                                     ]
-
 
         for i in range(get_concat_iteration_num()[flag]):
             config_group_convs[i] = []
 
         #               kernel_size0,kernel_size1,num_out_channel,stride0,valid_or_same
         config_classification = [[1, 1, 1024, 1, 0],
-
+                                 [1, 1, 512, 1, 0],
                                  [1, 1, num_class, 1, 0]]
 
 
