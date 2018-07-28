@@ -46,6 +46,9 @@ parser.add_argument('--momentum', type=float, default=0.9, help='Initial learnin
 parser.add_argument('--optimizer', default='adam', help='adam or momentum [default: adam]')
 parser.add_argument('--decay_step', type=int, default=500000, help='Decay step for lr decay [default: 400000]')
 parser.add_argument('--decay_rate', type=float, default=0.75, help='Decay rate for lr decay [default: 0.73]')
+parser.add_argument('--bn_decay_rate', type=float, default=0.5, help='Decay rate for lr decay [default: 0.5]')
+
+
 
 parser.add_argument('--only_evaluate',action='store_true',help='do not train')
 parser.add_argument('--finetune',action='store_true',help='finetune')
@@ -129,7 +132,9 @@ else:
 POSITIVE_LABEL = 1
 
 BN_INIT_DECAY = 0.5
-BN_DECAY_DECAY_RATE = 0.5
+#BN_DECAY_DECAY_RATE = 0.5
+
+BN_DECAY_DECAY_RATE = FLAGS.bn_decay_rate
 #BN_DECAY_DECAY_STEP = float(DECAY_STEP * 2)
 BN_DECAY_DECAY_STEP = float(DECAY_STEP)
 BN_DECAY_CLIP = 0.999999

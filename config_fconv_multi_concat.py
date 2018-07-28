@@ -13,6 +13,8 @@ def get_concat_iteration_num():
     concat_iteration_nums[19] = 7
     concat_iteration_nums[51] = 7
     concat_iteration_nums[52] = 7
+    concat_iteration_nums[522] = 1
+    concat_iteration_nums[5222] = 1
     concat_iteration_nums[53] = 7
 
     return concat_iteration_nums
@@ -30,6 +32,9 @@ def get_concat_ids():
     #concat_ids[50] = [2, 2, 2, 2, 2, 2, 2]
     concat_ids[51] = [1,1,1,1,1,1,1]
     concat_ids[52] = [1, 1, 1, 1, 1, 1, 1]
+
+    concat_ids[522] = [1]
+    concat_ids[5222] = [2]
     concat_ids[53] = [1, 1, 1, 1, 1, 1, 1]
     #concat_ids[53] = [2, 2, 2, 2, 2, 2, 2]
     #concat_ids[52] = [1]
@@ -68,9 +73,9 @@ def get_config_fconv_multi_concat(flag,num_elements,num_class,num_satelite,k_con
                                  [1, 1, num_class, 1, 0]]
     if flag == 9:
 
-        config_point_encoders[0] = [[1,num_elements,32,1,0]]
-        config_point_encoders[1] = [[1,num_elements,104,1,0]]
-        config_point_encoders[2] = [[1,num_elements,208,1,0]]
+        config_point_encoders[0] = [[1, num_elements,32,1,0]]
+        config_point_encoders[1] = [[1, num_elements,104,1,0]]
+        config_point_encoders[2] = [[1, num_elements,208,1,0]]
         config_point_encoders[3] = [[1, num_elements, 344, 1, 0]]
         config_point_encoders[4] = [[1, num_elements, 512, 1, 0]]
 
@@ -340,6 +345,47 @@ def get_config_fconv_multi_concat(flag,num_elements,num_class,num_satelite,k_con
         config_classification = [[1, 1, 1024, 1, 0],
 
                                  [1, 1, num_class, 1, 0]]
+
+    if flag == 522:
+
+        config_point_encoders[0] = [[1, num_elements, 32, 1, 0],
+                                    [1, 1, 64, 1, 0],
+                                    [1, 1, 128, 1, 0],
+                                    [1, 1, 256, 1, 0],
+                                    [1, 1, 512, 1, 0],
+                                    [1, 1, 1024, 1, 0]
+                                    ]
+
+
+        for i in range(get_concat_iteration_num()[flag]):
+            config_group_convs[i] = []
+
+        #               kernel_size0,kernel_size1,num_out_channel,stride0,valid_or_same
+        config_classification = [[1, 1, 1024, 1, 0],
+                                 [1, 1, 512, 1, 0],
+                                 [1, 1, num_class, 1, 0]]
+
+    if flag == 5222:
+
+        config_point_encoders[0] = [[1, num_elements, 32, 1, 0],
+                                    [1, 1, 64, 1, 0],
+                                    [1, 1, 128, 1, 0],
+                                    [1, 1, 256, 1, 0],
+                                    [1, 1, 512, 1, 0],
+                                    [1, 1, 864, 1, 0],
+                                    [1, 1, 1024, 1, 0],
+                                    ]
+
+
+        for i in range(get_concat_iteration_num()[flag]):
+            config_group_convs[i] = []
+
+        #               kernel_size0,kernel_size1,num_out_channel,stride0,valid_or_same
+        config_classification = [[1, 1, 1024, 1, 0],
+
+                                 [1, 1, num_class, 1, 0]]
+
+
     if flag == 53:
 
         config_point_encoders[0] = [[1, num_elements, 32, 1, 0], [1, 1, 32, 1, 0], [1, 1, 48, 1, 0]]

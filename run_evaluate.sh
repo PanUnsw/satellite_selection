@@ -123,6 +123,15 @@ N9_WGDOP_B128_0_Mcon_1_1611_HD="python $train_script --only_evaluate --log_dir l
 
 
 #$N9_WGDOP_B128_0_Mcon_0_1611_HD
-$N9_WGDOP_B128_0_Mcon_1_1611_HD
+#$N9_WGDOP_B128_0_Mcon_1_1611_HD
 ##use for 9 sats
 
+#-----------
+# only use hd test for model based on PointNet
+N9_WGDOP_B128_0_Mcon_0_1611_HD="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_hd_b128_9_data_WGDOP_new_ntop20-11_mc9-522-18MtiCon --ntop_candi 20-11 --cascade_step 0  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0    --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-522-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --UseMultiConcat"
+N9_WGDOP_B128_0_Mcon_1_1611_HD="python $train_script --only_evaluate --log_dir logN9_WGDOP_B128_hd_b128_9_data_WGDOP_new_ntop20-11_mc9-522-18MtiCon --ntop_candi 20-11 --cascade_step 1  --neg_loss_w 1.15-1.1-1.25 --model_epoch 0-14 --a N9_WGDOP_B128 --data_source_test data_WGDOP_test2 --model_config 9-522-18  --num_pos_ls 9 --batch_size 128 --feed_star_elements hd --UseMultiConcat --fix_pn"
+
+
+$N9_WGDOP_B128_0_Mcon_0_1611_HD
+$N9_WGDOP_B128_0_Mcon_1_1611_HD
+##use for 9 sats
